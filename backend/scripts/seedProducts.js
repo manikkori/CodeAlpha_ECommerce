@@ -38,8 +38,60 @@ const dummyProducts = [
     image_url:
       "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=500&q=80",
   },
+  {
+    name: "Pro Wireless Mouse",
+    description:
+      "Ultra-lightweight wireless gaming mouse with precision sensor.",
+    price: 69.99,
+    stock_quantity: 85,
+    image_url:
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80",
+  },
+  {
+    name: "1080p Web Camera",
+    description:
+      "High-definition webcam with built-in dual noise-reducing microphones.",
+    price: 45.0,
+    stock_quantity: 200,
+    image_url:
+      "https://images.unsplash.com/photo-1599641772594-521f7c2b5cb0?w=500&q=80",
+  },
+  {
+    name: "Bluetooth Smartwatch",
+    description:
+      "Fitness tracker and smartwatch with heart rate monitor and water resistance.",
+    price: 120.0,
+    stock_quantity: 40,
+    image_url:
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&q=80",
+  },
+  {
+    name: "Portable Bluetooth Speaker",
+    description:
+      "Waterproof portable speaker with 12-hour playtime and deep bass.",
+    price: 55.99,
+    stock_quantity: 150,
+    image_url:
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80",
+  },
+  {
+    name: "1TB Portable SSD",
+    description:
+      "High-speed external solid state drive for fast data transfers and backup.",
+    price: 105.5,
+    stock_quantity: 60,
+    image_url:
+      "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&q=80",
+  },
+  {
+    name: "Adjustable Laptop Stand",
+    description: "Aluminum ergonomic laptop stand, foldable and portable.",
+    price: 25.0,
+    stock_quantity: 300,
+    image_url:
+      "https://images.unsplash.com/photo-1527842891421-42eec6699767?w=500&q=80",
+  },
 ];
-
 const seedDB = async () => {
   try {
     await db.query("DELETE FROM products");

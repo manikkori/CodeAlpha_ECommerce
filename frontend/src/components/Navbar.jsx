@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
   const navigate = useNavigate();
+
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   const handleLogout = () => {
     logout();
@@ -17,16 +21,29 @@ const Navbar = () => {
         <Link to="/" className="text-xl font-bold">
           E-Shop
         </Link>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-6 items-center">
           <Link to="/" className="hover:text-gray-200">
             Home
           </Link>
-          <Link to="/cart" className="hover:text-gray-200">
+
+          <Link
+            to="/cart"
+            className="hover:text-gray-200 relative flex items-center"
+          >
             Cart
+            {cartCount > 0 && (
+              <span className="absolute -top-3 -right-4 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                {cartCount}
+              </span>
+            )}
           </Link>
+
           {user ? (
             <>
-              <Link to="/profile" className="hover:text-gray-200 font-medium">
+              <Link
+                to="/profile"
+                className="hover:text-gray-200 font-medium ml-2"
+              >
                 Hi, {user.name}
               </Link>
               <button
@@ -38,7 +55,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="hover:text-gray-200">
+              <Link to="/login" className="hover:text-gray-200 ml-2">
                 Login
               </Link>
               <Link
