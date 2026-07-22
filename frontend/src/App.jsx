@@ -1,35 +1,19 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
 
 function App() {
-  const [message, setMessage] = useState("Loading...");
-
-  useEffect(() => {
-    
-    const apiUrl = import.meta.env.VITE_API_URL;
-
-    axios
-      .get(`${apiUrl}/`)
-      .then((response) => {
-        setMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.error("API error:", error);
-        setMessage("Backend se connect nahi ho paya!");
-      });
-  }, []);
-
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="p-8 bg-white rounded-lg shadow-md text-center">
-        <h1 className="text-2xl font-bold text-blue-600 mb-4">
-          E-Commerce Frontend
-        </h1>
-        <p className="text-gray-700 font-medium border p-4 bg-gray-50 rounded">
-          Backend Response: {message}
-        </p>
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
