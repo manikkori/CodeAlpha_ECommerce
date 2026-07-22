@@ -1,18 +1,23 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="border rounded-lg p-4 shadow-sm bg-white flex flex-col justify-between">
+    <div className="border rounded-lg p-4 shadow-sm bg-white flex flex-col justify-between hover:shadow-md transition-shadow">
       <div>
-        <img
-          src={product.image_url || "https://via.placeholder.com/150"}
-          alt={product.name}
-          className="w-full h-48 object-cover mb-4 rounded"
-        />
-        <h3 className="text-lg font-semibold">{product.name}</h3>
+        <Link to={`/product/${product.id}`}>
+          <img
+            src={product.image_url || "https://via.placeholder.com/150"}
+            alt={product.name}
+            className="w-full h-48 object-cover mb-4 rounded cursor-pointer"
+          />
+          <h3 className="text-lg font-semibold hover:text-blue-600 transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         <p className="text-gray-600 text-sm mt-1 h-10 overflow-hidden">
           {product.description}
         </p>
