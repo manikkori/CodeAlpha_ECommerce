@@ -66,7 +66,7 @@ const Profile = () => {
                 </p>
               </div>
               <div className="text-right">
-                <p className="font-bold text-xl">${order.total_price}</p>
+                <p className="font-bold text-xl">₹{order.total_price}</p>
                 <span
                   className={`inline-block px-3 py-1 mt-1 text-xs font-semibold rounded-full ${
                     order.status === "Completed"
