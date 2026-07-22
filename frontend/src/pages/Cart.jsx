@@ -75,7 +75,7 @@ const Cart = () => {
             </div>
             <div className="flex items-center gap-4">
               <span className="font-bold">
-                ${(item.price * item.quantity).toFixed(2)}
+                ₹{(item.price * item.quantity).toFixed(2)}
               </span>
               <button
                 onClick={() => removeFromCart(item.id)}
@@ -89,7 +89,7 @@ const Cart = () => {
 
         <div className="flex justify-between items-center mt-6 pt-4 border-t">
           <span className="text-xl font-bold">Total:</span>
-          <span className="text-2xl font-bold">${cartTotal.toFixed(2)}</span>
+          <span className="text-2xl font-bold">₹{cartTotal.toFixed(2)}</span>
         </div>
 
         <button
