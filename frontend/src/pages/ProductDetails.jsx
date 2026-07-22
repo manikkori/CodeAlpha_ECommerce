@@ -52,7 +52,7 @@ const ProductDetails = () => {
         <div className="md:w-1/2 flex flex-col justify-center">
           <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
           <p className="text-xl font-semibold text-blue-600 mb-4">
-            ${product.price}
+            ₹{product.price}
           </p>
           <p className="text-gray-700 mb-6 leading-relaxed">
             {product.description ||

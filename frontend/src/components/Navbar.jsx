@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-blue-600 p-4 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center flex-wrap">
         <Link to="/" className="text-2xl font-bold">
-          E-Shop
+          Manik's Store
         </Link>
 
         <button
